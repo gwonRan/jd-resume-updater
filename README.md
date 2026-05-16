@@ -1,86 +1,104 @@
 # JD Resume Updater
 
-`jd-resume-updater` is a Codex skill for turning selected project notes, job descriptions, and existing resume content into grounded resume updates.
+`jd-resume-updater`는 사용자가 제공한 프로젝트 메모, 직무 정보, 기존 이력서, 목표 JD를 바탕으로 이력서 콘텐츠를 업데이트하는 Codex skill입니다.
 
-It is designed for career materials that are incomplete or fragmented. Instead of inventing missing facts, it extracts evidence, maps experience to the target JD, drafts resume bullets, and asks focused follow-up questions when stronger proof is needed.
+완성된 문서가 없어도 사용할 수 있습니다. 일부 프로젝트 메모, 기억 기반 요약, 회의 내용, 기존 이력서 일부만 있어도 근거를 추출하고 JD와 연결해 이력서 bullet, 경력 요약, 면접 답변 재료를 만듭니다.
 
-## What It Helps With
+## 주요 기능
 
-- Analyze a target JD and identify required skills, keywords, and role signals
-- Extract project evidence from notes, summaries, meeting records, or memory-based input
-- Match PM or product-related experience to JD requirements
-- Draft Korean or English resume bullets
-- Create resume section updates, career summaries, LinkedIn/About copy, and interview STAR answers
-- Flag missing facts, unclear ownership, and confidential information that should be generalized
+- 목표 JD의 필수 역량, 우대 역량, 반복 키워드, 직무 레벨 신호 분석
+- 프로젝트 메모에서 이력서에 쓸 수 있는 근거 추출
+- PM, 서비스 기획, 운영 기획, 앱 서비스 고도화 경험을 JD 요구사항과 매칭
+- 한국어 또는 영어 이력서 bullet 작성
+- 이력서 섹션, 경력 요약, LinkedIn/About 문장, 면접 STAR 답변 초안 작성
+- 부족한 성과 수치, 오너십, 협업 범위, 기밀 정보 여부에 대한 후속 질문 생성
 
-## How To Use
+## 사용 방법
 
-In Codex, ask to use this skill and provide whatever materials you have.
+Codex에서 이 skill을 사용한다고 말하고, 가지고 있는 자료를 붙여넣으면 됩니다.
 
 ```text
 Use $jd-resume-updater to update my resume for this JD.
 
-Target JD:
+목표 JD:
 ...
 
-Current role:
-PM, 4 years of experience
+내 직무 정보:
+- 현재 직무: PM
+- 연차: 4년차
+- 담당 범위: 운영기획 / 앱 서비스 고도화
+- 강조 역량: 구조화 역량
 
-Project notes:
+프로젝트 메모:
 ...
 
-Existing resume:
+기존 이력서:
 ...
 ```
 
-You do not need to fill every field. The skill will work with partial notes and ask follow-up questions for missing details.
+모든 항목을 채울 필요는 없습니다. 정보가 부족하면 skill이 이력서 품질을 높이기 위한 후속 질문을 정리합니다.
 
-## Recommended Input
+## 입력 템플릿
 
 ```markdown
-## Target JD
-Paste the job description here.
+## 목표 JD
+지원하려는 JD를 붙여넣어 주세요.
 
-## Role Information
-- Current or previous role:
-- Years of experience:
-- Scope:
-- Strengths to emphasize:
-- Target position/company:
+## 내 직무 정보
+- 현재/과거 직무:
+- 연차:
+- 담당 범위:
+- 강조하고 싶은 역량:
+- 지원하려는 포지션/회사:
 
-## Existing Resume Or Career Summary
-Paste your current resume, LinkedIn/About copy, or career summary.
+## 기존 이력서 또는 경력 요약
+기존 이력서, 경력 요약, LinkedIn/About 문장 등이 있으면 붙여넣어 주세요.
 
-## Project Notes
-- Period:
-- Project goal:
-- Problem:
-- What I did:
-- Tools/methods:
-- Collaborators:
-- Quantitative results:
-- Qualitative results:
-- Confidential information:
+## 프로젝트 메모
+- 기간:
+- 프로젝트 목적:
+- 문제 상황:
+- 내가 한 일:
+- 사용 기술/도구/방법:
+- 협업 대상:
+- 성과 수치:
+- 정성 성과:
+- 공개하면 안 되는 정보:
 
-## Output Preference
-- Language:
-- Needed output: resume bullets / resume update / JD matching / interview answers
-- Tone:
-- Expressions to avoid:
+## 선호사항
+- 한국어/영어:
+- 필요한 출력물: 이력서 / 경력기술서 / LinkedIn / 면접 답변
+- 원하는 톤:
+- 특별히 피하고 싶은 표현:
 ```
 
-## Output Modes
+## 출력 모드
 
-- Project evidence table
-- JD analysis
-- JD-experience matching
-- Resume bullets
-- Resume section updates
-- Career narrative
-- Interview preparation
-- Follow-up question list
+- 프로젝트 증거표
+- JD 분석
+- JD-경험 매칭
+- 이력서 bullet
+- 이력서 섹션 업데이트
+- 커리어 서사
+- 면접 준비 답변
+- 후속 질문 리스트
 
-## Repository Structure
+## 설치 방법
+
+이 저장소를 Codex skills 디렉터리에 clone합니다.
+
+```bash
+mkdir -p ~/.codex/skills
+git clone https://github.com/gwonRan/jd-resume-updater.git ~/.codex/skills/jd-resume-updater
+```
+
+그다음 새 Codex 세션에서 다음처럼 호출합니다.
+
+```text
+Use $jd-resume-updater
+```
+
+## 저장소 구조
 
 ```text
 .
@@ -100,26 +118,12 @@ Paste your current resume, LinkedIn/About copy, or career summary.
     └── resume_quality_rubric.md
 ```
 
-## Installation
+## 작성 원칙
 
-Clone this repository into your Codex skills directory.
-
-```bash
-mkdir -p ~/.codex/skills
-git clone https://github.com/gwonRan/jd-resume-updater.git ~/.codex/skills/jd-resume-updater
-```
-
-Then start a new Codex session and call the skill:
-
-```text
-Use $jd-resume-updater
-```
-
-## Principles
-
-- Do not invent metrics, dates, tools, ownership, or outcomes.
-- Mark uncertain claims as needing confirmation.
-- Separate personal contribution from team or company outcomes.
-- Use JD keywords naturally, not as a keyword dump.
-- Generalize confidential names, internal systems, customer details, and sensitive business metrics.
-- Keep the user's real seniority and ownership level intact.
+- 사용자가 제공한 정보만 확정 사실로 사용합니다.
+- 수치, 날짜, 도구, 프로젝트 범위, 오너십, 성과를 임의로 만들지 않습니다.
+- 불확실한 내용은 `[확인 필요]`로 표시하거나 후속 질문으로 분리합니다.
+- 개인 기여와 팀/회사 성과를 구분합니다.
+- 고객명, 내부 시스템명, 미공개 제품, 민감한 비즈니스 수치는 일반화합니다.
+- JD 키워드는 자연스럽게 반영하고, 키워드 나열식으로 억지 삽입하지 않습니다.
+- 사용자의 실제 연차와 역할 범위를 과장하지 않습니다.
