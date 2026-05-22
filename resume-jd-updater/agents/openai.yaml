@@ -1,0 +1,8 @@
+interface:
+  display_name: "Resume JD Updater"
+  short_description: "Update resumes from JDs and project notes"
+  brand_color: "#2563EB"
+  default_prompt: "Use $resume-jd-updater to turn my target JD and project notes into grounded resume bullets and follow-up questions."
+
+policy:
+  allow_implicit_invocation: true

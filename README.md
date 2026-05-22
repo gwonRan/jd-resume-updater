@@ -1,151 +1,78 @@
-# JD Resume Updater
+# Career Document Skills
 
-`jd-resume-updater`는 사용자가 제공한 프로젝트 메모, 직무 정보, 기존 이력서, 목표 JD를 바탕으로 이력서와 포트폴리오 콘텐츠를 업데이트하는 Codex skill입니다.
+이 저장소는 이력서와 포트폴리오 작성을 위한 Codex skill 두 개를 함께 관리합니다.
 
-완성된 문서가 없어도 사용할 수 있습니다. 일부 프로젝트 메모, 기억 기반 요약, 회의 내용, 기존 이력서 일부만 있어도 근거를 추출하고 JD와 연결해 마스터 이력서/포트폴리오 재료, 이력서 bullet, 경력 요약, 포트폴리오 케이스 스터디, 면접 답변 재료를 만듭니다.
+## Skills
 
-## 주요 기능
+### `resume-jd-updater`
 
-- 목표 JD의 필수 역량, 우대 역량, 반복 키워드, 직무 레벨 신호 분석
-- 프로젝트 메모에서 이력서에 쓸 수 있는 근거 추출
-- 모든 경험을 모은 마스터 이력서/포트폴리오 재료집 생성
-- 단순 활동을 문제, 해결 방식, 결과가 드러나는 성과 언어로 변환
-- 스킬/도구를 단순 나열이 아니라 사용 맥락과 결과에 연결
-- 프로젝트 기간, 마감일, 출시일, 지연/단축, 운영 기간 추출
-- 프로젝트를 포트폴리오 케이스 스터디 구조로 재구성
-- 사용자의 직무 경험을 목표 JD 요구사항과 매칭
-- 한국어 또는 영어 이력서 bullet 작성
-- 이력서 섹션, 경력 요약, LinkedIn/About 문장, 면접 STAR 답변 초안 작성
-- 부족한 성과 수치, 오너십, 협업 범위, 기밀 정보 여부에 대한 후속 질문 생성
+목표 JD와 프로젝트 메모를 바탕으로 이력서와 경력기술서를 업데이트하는 skill입니다.
 
-## 사용 방법
+주요 기능:
 
-Codex에서 이 skill을 사용한다고 말하고, 가지고 있는 자료를 붙여넣으면 됩니다.
-
-```text
-Use $jd-resume-updater to update my resume for this JD.
-
-목표 JD:
-...
-
-내 직무 정보:
-- 현재/과거 직무:
-- 연차:
-- 담당 범위:
-- 강조 역량:
-
-프로젝트 메모:
-...
-
-기존 이력서:
-...
-```
-
-마스터 이력서나 포트폴리오 재료집부터 만들고 싶다면 이렇게 요청할 수 있습니다.
-
-```text
-Use $jd-resume-updater to build a master resume and portfolio evidence bank from these project notes.
-
-프로젝트 메모:
-...
-
-원하는 출력:
-- 마스터 재료집
-- 성과 언어 변환표
-- 스킬/도구 맥락표
-- 기간/기한 누락 질문
-```
-
-모든 항목을 채울 필요는 없습니다. 정보가 부족하면 skill이 이력서 품질을 높이기 위한 후속 질문을 정리합니다.
-
-## 입력 템플릿
-
-```markdown
-## 목표 JD
-지원하려는 JD를 붙여넣어 주세요.
-
-## 내 직무 정보
-- 현재/과거 직무:
-- 연차:
-- 담당 범위:
-- 강조하고 싶은 역량:
-- 지원하려는 포지션/회사:
-
-## 기존 이력서 또는 경력 요약
-기존 이력서, 경력 요약, LinkedIn/About 문장 등이 있으면 붙여넣어 주세요.
-
-## 프로젝트 메모
-- 기간:
-- 마감일/출시일/운영 기간:
-- 프로젝트 목적:
-- 문제 상황:
-- 내가 한 일:
-- 사용 기술/도구/방법:
-- 해당 기술/도구를 어떻게 활용했는지:
-- 협업 대상:
-- 성과 수치:
-- 정성 성과:
-- 배운 점/회고:
-- 공개하면 안 되는 정보:
-
-## 선호사항
-- 한국어/영어:
-- 필요한 출력물: 이력서 / 경력기술서 / LinkedIn / 면접 답변
-- 원하는 톤:
-- 특별히 피하고 싶은 표현:
-```
-
-## 출력 모드
-
-- 프로젝트 증거표
 - JD 분석
+- 마스터 이력서 재료집 생성
 - JD-경험 매칭
-- 마스터 이력서/포트폴리오 재료집
-- 성과 언어 변환표
-- 스킬/도구 맥락표
-- 기간/기한 누락 질문
-- 이력서 bullet
-- 이력서 섹션 업데이트
-- 포트폴리오 케이스 스터디
-- 커리어 서사
-- 면접 준비 답변
-- 후속 질문 리스트
+- 성과 언어 변환
+- 스킬/도구 맥락화
+- 기간/기한 반영
+- 이력서 bullet 및 섹션 업데이트
+- 후속 질문 생성
 
-## 설치 방법
-
-이 저장소를 Codex skills 디렉터리에 clone합니다.
-
-```bash
-mkdir -p ~/.codex/skills
-git clone https://github.com/gwonRan/jd-resume-updater.git ~/.codex/skills/jd-resume-updater
-```
-
-그다음 새 Codex 세션에서 다음처럼 호출합니다.
+사용 예시:
 
 ```text
-Use $jd-resume-updater
+Use $resume-jd-updater to update my resume for this JD.
+```
+
+### `portfolio-case-builder`
+
+프로젝트 메모를 채용용 포트폴리오 케이스 스터디로 바꾸는 skill입니다.
+
+주요 기능:
+
+- 포트폴리오 목차 구성
+- 프로젝트 증거 추출
+- 문제 정의-해결 과정-결과-회고 구조화
+- 스킬/도구 활용 맥락 정리
+- 성과 시각화 아이디어 도출
+- JD와 연결되는 역량 매핑
+- 후속 질문 생성
+
+사용 예시:
+
+```text
+Use $portfolio-case-builder to create portfolio case studies from these project notes.
 ```
 
 ## 저장소 구조
 
 ```text
 .
-├── SKILL.md
-├── agents/
-│   └── openai.yaml
-├── assets/
-│   ├── input_template_ko.md
-│   ├── project_evidence_template.md
-│   ├── resume_template_en.md
-│   └── resume_template_ko.md
-└── references/
-    ├── bullet_patterns.md
-    ├── followup_questions.md
-    ├── jd_analysis_framework.md
-    ├── master_resume_portfolio_framework.md
-    ├── project_evidence_framework.md
-    └── resume_quality_rubric.md
+├── README.md
+├── portfolio-case-builder/
+│   ├── SKILL.md
+│   ├── agents/
+│   ├── assets/
+│   └── references/
+└── resume-jd-updater/
+    ├── SKILL.md
+    ├── agents/
+    ├── assets/
+    └── references/
 ```
+
+## 설치 방법
+
+이 저장소를 받은 뒤, 필요한 skill 폴더를 Codex skills 디렉터리에 복사하거나 링크합니다.
+
+```bash
+mkdir -p ~/.codex/skills
+cp -R resume-jd-updater ~/.codex/skills/resume-jd-updater
+cp -R portfolio-case-builder ~/.codex/skills/portfolio-case-builder
+```
+
+두 skill을 모두 쓰려면 두 폴더가 각각 `~/.codex/skills/` 바로 아래에 있어야 합니다.
 
 ## 작성 원칙
 
@@ -153,9 +80,5 @@ Use $jd-resume-updater
 - 수치, 날짜, 도구, 프로젝트 범위, 오너십, 성과를 임의로 만들지 않습니다.
 - 불확실한 내용은 `[확인 필요]`로 표시하거나 후속 질문으로 분리합니다.
 - 개인 기여와 팀/회사 성과를 구분합니다.
-- 단순 활동은 성과 언어로 바꾸되, 성과 수치가 없으면 임의로 만들지 않습니다.
 - 스킬과 도구는 이름만 나열하지 않고 실제 사용 맥락과 결과에 연결합니다.
-- 기간, 기한, 마감, 운영 기간은 프로젝트의 난이도와 임팩트를 보여주는 근거로 사용합니다.
 - 고객명, 내부 시스템명, 미공개 제품, 민감한 비즈니스 수치는 일반화합니다.
-- JD 키워드는 자연스럽게 반영하고, 키워드 나열식으로 억지 삽입하지 않습니다.
-- 사용자의 실제 연차와 역할 범위를 과장하지 않습니다.
